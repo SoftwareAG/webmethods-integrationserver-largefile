@@ -17,7 +17,7 @@ public class BufferHandlerSampleImpl implements tom.BufferHandlerInterface {
 		System.out.println("*** start handle byte buffer here! ***");
 		nio.printBuffer(bb);
 		System.out.println();
-		long pos = nio.search(bb, "1a".getBytes());
+		long pos = nio.search(bb.array(), 0, bb.array().length, "1a".getBytes());
 		System.out.println("pos of '1a' is "+pos);
 		if (pos > 0) {
 			nio.storeMetaInfo("key1", bb, (int) pos, "1a".length());
